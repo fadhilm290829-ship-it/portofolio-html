@@ -1,128 +1,119 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Fadhil Muhammad</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio Fadhil Muhammad</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header>
-    <h1>Portofolio Fadhil Muhammad</h1>
+
+  <header>
+    <h1 class="text-2xl font-semibold">Fadhil Muhammad</h1>
     <nav>
-    <ul>
+      <ul>
         <li><a href="#hero">Beranda</a></li>
-        <li><a href="#about">Tentang Saya</a></li>
+        <li><a href="#about">Tentang</a></li>
         <li><a href="#skill">Skill</a></li>
+        <li><a href="#proyek">Proyek</a></li>
         <li><a href="#kontak">Kontak</a></li>
-    </ul>
-</nav>
-    </header>
-    <main>
-        <section id="hero">
-            <img src="image/foto-profil.jpeg"
-            alt="Foto Profil Fadhil Muhammad"
-            width="200">
+      </ul>
+    </nav>
+  </header>
 
-            <h2>Fadhil Muhammad</h2>
-            <p>Mahasiswa Sistem Indormasi yang ingin belajar teknologi.</p>
-        </section>
+  <main>
 
-        <!-- About Section -->
-<section id="about">
+    <section id="hero">
+      <img class="mx-auto rounded-full shadow-lg" src="image/foto-profil.jpeg"
+           alt="Foto Profil Fadhil Muhammad" width="200" height="200">
+      <h2>Fadhil Muhammad</h2>
+      <p class="text-lg text-slate-600">
+        Mahasiswa Sistem Informasi yang antusias belajar teknologi.
+      </p>
+    </section>
 
-    <h2>Tentang Saya</h2>
+    <section id="about">
+      <h2>Tentang Saya</h2>
+      <p class="text-slate-600">
+        Halo, saya Fadhil Muhammad, mahasiswa Sistem Informasi di UIN Syarif
+        Hidayatullah Jakarta dan lulusan SMA Cenderawasih 1 Jakarta. Saya
+        tertarik pada pengembangan web dan ingin membangun fondasi yang kuat
+        agar bisa membuat solusi digital yang bermanfaat.
+      </p>
+    </section>
 
-    <p>
-        Halo, saya Fadhil Muhammad, mahasiswa Sistem Informasi
-        di UIN Syarif Hidayatullah Jakarta.
-        Saya tertarik pada web development dan teknologi.
-        Saat ini saya sedang belajar HTML dan CSS untuk
-        membangun kemampuan dalam membuat website.
-    </p>
-
-</section>
-
-<!-- Tabel Skill -->
-<section id="skill">
-
-    <h2>Skill Saya</h2>
-
-    <table border="1">
-
-        <thead>
+    <section id="skill">
+      <h2>Skill</h2>
+      <div class="kartu kartu-skill">
+        <table>
+          <thead>
             <tr>
-                <th>No</th>
-                <th>Nama Skill</th>
-                <th>Tingkat Kemahiran</th>
+              <th>No</th>
+              <th>Nama Skill</th>
+              <th>Tingkat Kemahiran</th>
             </tr>
-        </thead>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>HTML</td><td>Basic</td></tr>
+            <tr><td>2</td><td>CSS</td><td>Basic</td></tr>
+            <tr><td>3</td><td>Microsoft Word</td><td>Intermediate</td></tr>
+            <tr><td>4</td><td>Bahasa Inggris</td><td>Advance</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>HTML</td>
-                <td>Basic</td>
-            </tr>
+    <section id="proyek">
+      <h2>Proyek</h2>
+      <div class="daftar-proyek">
 
-            <tr>
-                <td>2</td>
-                <td>Microsoft Word</td>
-                <td>Intermediate</td>
-            </tr>
+        <article class="kartu border-t-4 border-blue-600">
+          <h3>Portofolio Pribadi</h3>
+          <p class="text-slate-600">Website portofolio dengan HTML dan CSS sebagai tugas praktikum.</p>
+          <a class="tombol hover:opacity-90" href="#">Lihat Proyek</a>
+        </article>
 
-            <tr>
-                <td>3</td>
-                <td>Penulisan Artikel</td>
-                <td>Intermediate</td>
-            </tr>
+        <article class="kartu border-t-4 border-blue-600">
+          <h3>Web Daftar Tugas</h3>
+          <p class="text-slate-600">Website untuk menampilkan daftar tugas harian.</p>
+          <a class="tombol hover:opacity-90" href="#">Lihat Proyek</a>
+        </article>
 
-            <tr>
-                <td>4</td>
-                <td>Bahasa Inggris</td>
-                <td>Intermediate</td>
-            </tr>
-        </tbody>
+        <article class="kartu border-t-4 border-blue-600">
+          <h3>Katalog Buku Perpustakaan</h3>
+          <p class="text-slate-600">Halaman untuk menampilkan katalog buku di perpustakaan.</p>
+          <a class="tombol hover:opacity-90" href="#">Lihat Proyek</a>
+        </article>
 
-    </table>
-</section>
+      </div>
+    </section>
 
-<section id="kontak">
-  <h2>Hubungi Saya</h2>
+    <section id="kontak">
+      <h2>Hubungi Saya</h2>
+      <form action="#" method="post" class="kartu">
+        <p>
+          <label for="nama">Nama</label>
+          <input type="text" id="nama" name="nama" required>
+        </p>
+        <p>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </p>
+        <p>
+          <label for="pesan">Pesan</label>
+          <textarea id="pesan" name="pesan" rows="5" required></textarea>
+        </p>
+        <button type="submit" class="tombol hover:opacity-90">Submit</button>
+      </form>
+    </section>
 
-  <form action="#" method="post">
-    <p>
-      <label for="nama">Nama:</label><br>
-      <input type="text" id="nama" name="nama" required>
-    </p>
+  </main>
 
-    <p>
-      <label for="email">Email:</label><br>
-      <input type="email" id="email" name="email" required>
-    </p>
-
-    <p>
-      <label for="pesan">Pesan:</label><br>
-      <textarea id="pesan" name="pesan" rows="5" cols="40" required></textarea>
-    </p>
-
-    <button type="submit">Submit</button>
-  </form>
-</section>
-
-
-
-
-    </main>
-
-    <footer>
-  <p>&copy; 2026 Fadhil Muhammad. All Rights Reserved.</p>
-</footer>
+  <footer>
+    <p class="text-sm">&copy; 2026 Fadhil Muhammad. Seluruh hak cipta dilindungi.</p>
+  </footer>
 
 </body>
-
 </html>
