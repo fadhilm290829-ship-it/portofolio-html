@@ -30,7 +30,8 @@
 <body>
 
   <header>
-    <h1 class="logo"><a href="#hero">Fadhil M.</a></h1>
+  <h1 class="logo"><a href="#hero">FM</a></h1>
+  <div class="header-kanan">
     <nav aria-label="Navigasi utama">
       <ul>
         <li><a href="#hero">Beranda</a></li>
@@ -40,7 +41,12 @@
         <li><a href="#kontak">Kontak</a></li>
       </ul>
     </nav>
-  </header>
+    <button id="tombol-tema" class="tombol-tema" type="button" aria-label="Ganti tema terang atau gelap">
+      <span class="ikon" aria-hidden="true">&#9728;</span>
+      <span class="teks-tema">Mode Terang</span>
+    </button>
+  </div>
+</header>
 
   <div class="ticker" aria-hidden="true">
     <div class="ticker-isi">
@@ -198,6 +204,8 @@
             <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesanmu di sini" required></textarea>
           </p>
           <button type="submit" class="tombol">Submit</button>
+          <button type="submit" class="tombol">Submit</button>
+<p id="pesan-konfirmasi" class="pesan-konfirmasi" role="status" aria-live="polite"></p>
         </form>
 
       </div>
@@ -213,6 +221,6 @@
       <a href="#hero">&uarr; Ke atas</a>
     </p>
   </footer>
-
+<script src="script.js"></script>
 </body>
 </html>

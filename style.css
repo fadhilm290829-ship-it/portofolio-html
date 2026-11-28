@@ -734,3 +734,137 @@ body footer a:hover {
     animation: none;
   }
 }
+/* ===== Tombol ganti tema & pesan konfirmasi ===== */
+.header-kanan {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+body .tombol-tema {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: transparent;
+  color: #fff;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 3px solid var(--kuning);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+body .tombol-tema:hover {
+  background: var(--neon);
+  border-color: var(--neon);
+  transform: scale(1.06) rotate(-2deg);
+}
+
+.pesan-konfirmasi {
+  display: none;
+  margin-top: 24px;
+  padding: 16px 20px;
+  background: rgba(0, 229, 212, 0.15);
+  border: 3px solid var(--tosca);
+  border-left-width: 10px;
+  border-radius: 10px;
+  color: #f5f3ff;
+  font-weight: 600;
+}
+
+.pesan-konfirmasi.tampil {
+  display: block;
+}
+
+/* ===== TEMA TERANG (the world) ===== */
+:root[data-tema="terang"] {
+  --t-bg: #fff3b0;
+  --t-bg2: #ffe066;
+  --t-titik: rgba(161, 98, 7, 0.22);
+  --t-kartu: #fffbe0;
+  --t-garis: #2b2200;
+  --t-teks: #2b2200;
+  --t-lembut: #6b5410;
+  --t-input: #fff8cc;
+  --t-nama2: #a16207;
+  --t-aksen3: #d97706;
+}
+:root[data-tema="terang"] body {
+  color: var(--t-teks);
+  background-color: var(--t-bg);
+  background-image:
+    radial-gradient(var(--t-titik) 1.5px, transparent 1.5px),
+    linear-gradient(180deg, var(--t-bg) 0%, var(--t-bg2) 100%);
+}
+
+:root[data-tema="terang"] header { background: var(--t-bg); }
+:root[data-tema="terang"] nav a,
+:root[data-tema="terang"] .tombol-tema,
+:root[data-tema="terang"] .bulat { color: var(--t-teks); }
+:root[data-tema="terang"] .tombol-tema:hover,
+:root[data-tema="terang"] .bulat:hover { color: #fff; }
+
+:root[data-tema="terang"] .kartu { background: var(--t-kartu); border-color: var(--t-garis); }
+:root[data-tema="terang"] .daftar-proyek .kartu { border-top-color: var(--aksen); }
+:root[data-tema="terang"] .daftar-proyek .kartu:nth-child(3) { --aksen: var(--t-aksen3); }
+:root[data-tema="terang"] .kartu-bubble::before { border-top-color: var(--t-garis); }
+:root[data-tema="terang"] .kartu-bubble::after { border-top-color: var(--t-kartu); }
+:root[data-tema="terang"] .kartu-hover:hover h3 { color: #7c3aed; }
+:root[data-tema="terang"] .tombol { border-color: var(--t-garis); }
+
+:root[data-tema="terang"] .text-violet-100,
+:root[data-tema="terang"] .text-violet-200,
+:root[data-tema="terang"] .tagline { color: var(--t-lembut); }
+:root[data-tema="terang"] .daftar-proyek .kartu p { color: var(--t-lembut); }
+:root[data-tema="terang"] .text-kuning { color: #ff2e93; }
+:root[data-tema="terang"] .label { color: #0f766e; }
+:root[data-tema="terang"] #hero .nama-1 { color: var(--t-teks); }
+:root[data-tema="terang"] #hero .nama-2 { color: var(--t-nama2); }
+:root[data-tema="terang"] .gogogo { color: rgba(124, 58, 237, 0.14); }
+
+:root[data-tema="terang"] td { border-bottom-color: rgba(42, 23, 96, 0.14); }
+:root[data-tema="terang"] tbody tr:hover td { background: rgba(124, 58, 237, 0.12); }
+:root[data-tema="terang"] .level-basic { color: var(--t-lembut); border-color: var(--t-lembut); }
+:root[data-tema="terang"] .bar { background: rgba(42, 23, 96, 0.14); }
+:root[data-tema="terang"] .tag { color: var(--t-lembut); border-color: var(--t-lembut); }
+
+:root[data-tema="terang"] label { color: #6d28d9; }
+:root[data-tema="terang"] input,
+:root[data-tema="terang"] textarea {
+  color: var(--t-teks);
+  background: var(--t-input);
+  border-color: var(--t-lembut);
+}
+:root[data-tema="terang"] input::placeholder,
+:root[data-tema="terang"] textarea::placeholder { color: #8f82b8; }
+
+:root[data-tema="terang"] .pesan-konfirmasi { color: var(--t-teks); border-color: #0f766e; }
+:root[data-tema="terang"] footer { background: var(--t-garis); }
+/* Layar HP: tombol tema di bawah menu */
+@media (max-width: 768px) {
+  .header-kanan {
+    flex-direction: column;
+    gap: 10px;
+  }
+  /* Nama hero di mode terang */
+:root[data-tema="terang"] #hero .nama-1 {
+  color: #4c1d95;
+  -webkit-text-stroke: 0;
+  text-shadow: 3px 3px 0 #fff, 6px 6px 0 #00e5d4;
+}
+:root[data-tema="terang"] #hero .nama-2 {
+  color: #1b0f3b;
+  -webkit-text-stroke: 0;
+  text-shadow: 4px 4px 0 #ff2e93, 8px 8px 0 #fff;
+}
+/* Tagline lebih jelas di mode terang */
+:root[data-tema="terang"] .tagline {
+  color: #2b2200;
+  font-weight: 600;
+}
+}
