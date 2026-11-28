@@ -4,6 +4,7 @@ const tombolTema = document.getElementById("tombol-tema");
 const ikonTema = tombolTema.querySelector(".ikon");
 const teksTema = tombolTema.querySelector(".teks-tema");
 
+// Menerapkan tema ("gelap" atau "terang") ke seluruh halaman
 const terapkanTema = (tema) => {
   const gelap = tema === "gelap";
   html.setAttribute("data-tema", tema);
@@ -11,6 +12,7 @@ const terapkanTema = (tema) => {
   teksTema.textContent = gelap ? "Mode Terang" : "Mode Gelap";
 };
 
+// Ambil pilihan tema terakhir (default: gelap)
 let temaTersimpan = "gelap";
 try {
   temaTersimpan = localStorage.getItem("tema") || "gelap";
@@ -35,7 +37,7 @@ const inputNama = document.getElementById("nama");
 const pesanKonfirmasi = document.getElementById("pesan-konfirmasi");
 
 formKontak.addEventListener("submit", (event) => {
-  event.preventDefault();
+  event.preventDefault(); // cegah halaman reload
 
   const nama = inputNama.value.trim();
   pesanKonfirmasi.textContent = `Halo ${nama}, pesan Anda berhasil terkirim!`;

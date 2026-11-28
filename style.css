@@ -1,12 +1,87 @@
-/* ===== Variabel warna ===== */
+/* =========================================================
+   VARIABEL WARNA
+   Tema gelap = default. Tema terang (kuning) ada di bawahnya.
+   ========================================================= */
 :root {
   --gelap: #12062b;
-  --gelap2: #1d0a45;
   --ungu: #7c3aed;
   --neon: #ff2e93;
   --kuning: #ffe600;
   --tosca: #00e5d4;
-  --lembut: #c4b5fd;
+
+  --bg: #12062b;
+  --bg2: #1d0a45;
+  --titik: rgba(255, 46, 147, 0.28);
+  --kartu-bg: #1d0a45;
+  --garis-kartu: #ffffff;
+  --teks: #f5f3ff;
+  --teks-lembut: #c4b5fd;
+  --tagline: #ede9fe;
+  --header-bg: rgba(18, 6, 43, 0.92);
+  --header-garis: #ffe600;
+  --footer-bg: #000000;
+  --garis-tabel: rgba(196, 181, 253, 0.2);
+  --baris-hover: rgba(124, 58, 237, 0.25);
+  --bar-bg: rgba(255, 255, 255, 0.12);
+  --tag-garis: rgba(255, 255, 255, 0.4);
+  --tag-teks: rgba(255, 255, 255, 0.85);
+  --input-bg: #12062b;
+  --input-garis: rgba(196, 181, 253, 0.4);
+  --placeholder: #8b7fb8;
+  --label-form: #ffe600;
+  --label-hero: #00e5d4;
+  --aksen-teks: #ffe600;
+  --aksen3: #ffe600;
+  --logo-sh: #ffe600;
+  --garis-tema: #ffe600;
+  --foto-bg: #ffe600;
+  --gogo: rgba(255, 255, 255, 0.13);
+  --pesan-bg: rgba(0, 229, 212, 0.15);
+  --pesan-garis: #00e5d4;
+
+  --nama-1: #ffffff;
+  --nama-2: #ffe600;
+  --sh-1: 4px 4px 0 #ff2e93, 8px 8px 0 #7c3aed;
+  --sh-2: 4px 4px 0 #ff2e93, 8px 8px 0 #7c3aed;
+}
+
+/* ===== TEMA TERANG (kuning, ala The World) ===== */
+:root[data-tema="terang"] {
+  --bg: #fff3b0;
+  --bg2: #ffe066;
+  --titik: rgba(161, 98, 7, 0.22);
+  --kartu-bg: #fffbe0;
+  --garis-kartu: #2b2200;
+  --teks: #2b2200;
+  --teks-lembut: #6b5410;
+  --tagline: #2b2200;
+  --header-bg: rgba(255, 243, 176, 0.94);
+  --header-garis: #2b2200;
+  --footer-bg: #2b2200;
+  --garis-tabel: rgba(43, 34, 0, 0.15);
+  --baris-hover: rgba(217, 119, 6, 0.15);
+  --bar-bg: rgba(43, 34, 0, 0.15);
+  --tag-garis: #6b5410;
+  --tag-teks: #6b5410;
+  --input-bg: #fff8cc;
+  --input-garis: #6b5410;
+  --placeholder: #9a8540;
+  --label-form: #6d28d9;
+  --label-hero: #0f766e;
+  --aksen-teks: #ff2e93;
+  --aksen3: #d97706;
+  --logo-sh: #2b2200;
+  --garis-tema: #2b2200;
+  --foto-bg: #fffbe0;
+  --gogo: rgba(161, 98, 7, 0.16);
+  --pesan-bg: rgba(0, 229, 212, 0.2);
+  --pesan-garis: #0f766e;
+
+  /* Nama hero: Fadhil ungu tua, Muhammad pink */
+  --nama-1: #3b0764;
+  --nama-2: #ff2e93;
+  --sh-1: 3px 3px 0 #ffffff, 6px 6px 0 #ff2e93;
+  --sh-2: 4px 4px 0 #3b0764, 8px 8px 0 #ffffff;
 }
 
 * {
@@ -15,20 +90,16 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 /* ===== Typography ===== */
 html body {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
   line-height: 1.75;
-  color: #f5f3ff;
-  background-color: var(--gelap);
+  color: var(--teks);
+  background-color: var(--bg);
   background-image:
-    radial-gradient(rgba(255, 46, 147, 0.28) 1.5px, transparent 1.5px),
-    linear-gradient(180deg, #12062b 0%, #1d0a45 100%);
+    radial-gradient(var(--titik) 1.5px, transparent 1.5px),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
   background-size: 22px 22px, 100% 100%;
   overflow-x: hidden;
 }
@@ -44,14 +115,22 @@ body h3 {
   margin-bottom: 8px;
 }
 
+.teks-lembut {
+  color: var(--teks-lembut);
+}
+
+.aksen-teks {
+  color: var(--aksen-teks);
+}
+
 /* ===== Header & navigasi (Flexbox) ===== */
 body header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 12px 48px;
-  background: rgba(18, 6, 43, 0.92);
-  border-bottom: 4px solid var(--kuning);
+  background: var(--header-bg);
+  border-bottom: 4px solid var(--header-garis);
   position: sticky;
   top: 0;
   z-index: 50;
@@ -69,12 +148,18 @@ body .logo a {
   color: #fff;
   text-decoration: none;
   transform: skew(-10deg);
-  box-shadow: 4px 4px 0 var(--kuning);
+  box-shadow: 4px 4px 0 var(--logo-sh);
   transition: transform 0.2s;
 }
 
 body .logo a:hover {
   transform: skew(-10deg) scale(1.07);
+}
+
+.header-kanan {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 body nav ul {
@@ -86,7 +171,7 @@ body nav ul {
 body nav a {
   display: block;
   padding: 8px 16px;
-  color: #fff;
+  color: var(--teks);
   font-size: 13px;
   font-weight: 800;
   letter-spacing: 1px;
@@ -97,8 +182,39 @@ body nav a {
 }
 
 body nav a:hover {
-  background: var(--kuning);
-  color: var(--gelap);
+  background: var(--neon);
+  color: #fff;
+}
+
+/* Tombol ganti tema */
+body .tombol-tema {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: transparent;
+  color: var(--teks);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 3px solid var(--garis-tema);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+body .tombol-tema:hover {
+  background: var(--neon);
+  border-color: var(--neon);
+  color: #fff;
+  transform: scale(1.06) rotate(-2deg);
+}
+
+body .tombol-tema .ikon {
+  font-size: 16px;
+  line-height: 1;
 }
 
 /* ===== Ticker berjalan ===== */
@@ -163,7 +279,7 @@ body section h2 {
   z-index: -1;
   font-family: "Dela Gothic One", sans-serif;
   line-height: 1;
-  color: rgba(255, 255, 255, 0.13);
+  color: var(--gogo);
   pointer-events: none;
   user-select: none;
   animation: getar 0.25s linear infinite;
@@ -180,7 +296,7 @@ body section h2 {
   bottom: -20px;
   left: 0;
   font-size: 64px;
-  color: rgba(0, 229, 212, 0.2);
+  color: rgba(0, 229, 212, 0.22);
 }
 
 .g3 {
@@ -226,7 +342,7 @@ body section h2 {
 }
 
 .label {
-  color: var(--tosca);
+  color: var(--label-hero);
   font-size: 13px;
   font-weight: 800;
   letter-spacing: 4px;
@@ -254,13 +370,13 @@ body #hero h2 {
 }
 
 #hero .nama-1 {
-  color: #fff;
-  text-shadow: 4px 4px 0 var(--neon), 8px 8px 0 var(--ungu);
+  color: var(--nama-1);
+  text-shadow: var(--sh-1);
 }
 
 #hero .nama-2 {
-  color: var(--kuning);
-  text-shadow: 4px 4px 0 var(--neon), 8px 8px 0 var(--ungu);
+  color: var(--nama-2);
+  text-shadow: var(--sh-2);
 }
 
 .peran {
@@ -278,8 +394,9 @@ body #hero h2 {
 
 .tagline {
   max-width: 480px;
-  color: #ede9fe;
+  color: var(--tagline);
   font-size: 18px;
+  font-weight: 600;
 }
 
 @keyframes masuk {
@@ -301,14 +418,14 @@ body #hero h2 {
   content: "";
   position: absolute;
   inset: -12px;
-  background: var(--kuning);
+  background: var(--foto-bg);
   clip-path: polygon(8% 0, 100% 6%, 92% 100%, 0 94%);
 }
 
 .foto::after {
   content: "";
   position: absolute;
-  inset: -12px -12px -12px 12px;
+  inset: -4px -28px -28px 12px;
   background: var(--tosca);
   clip-path: polygon(8% 0, 100% 6%, 92% 100%, 0 94%);
   z-index: -1;
@@ -330,9 +447,9 @@ body .foto img {
   justify-content: center;
   width: 46px;
   height: 46px;
-  border: 3px solid var(--kuning);
+  border: 3px solid var(--neon);
   border-radius: 50%;
-  color: #fff;
+  color: var(--teks);
   font-size: 13px;
   font-weight: 800;
   text-decoration: none;
@@ -340,8 +457,8 @@ body .foto img {
 }
 
 .bulat:hover {
-  background: var(--kuning);
-  color: var(--gelap);
+  background: var(--neon);
+  color: #fff;
   transform: rotate(-10deg) scale(1.12);
 }
 
@@ -350,8 +467,8 @@ body .foto img {
   --aksen: var(--neon);
   position: relative;
   padding: 28px;
-  background: var(--gelap2);
-  border: 3px solid #fff;
+  background: var(--kartu-bg);
+  border: 3px solid var(--garis-kartu);
   border-radius: 14px;
   box-shadow: 8px 8px 0 var(--aksen);
   transition: transform 0.2s, box-shadow 0.2s;
@@ -377,12 +494,12 @@ body .foto img {
 
 .kartu-bubble::before {
   bottom: -35px;
-  border-top-color: #fff;
+  border-top-color: var(--garis-kartu);
 }
 
 .kartu-bubble::after {
   bottom: -28px;
-  border-top-color: var(--gelap2);
+  border-top-color: var(--kartu-bg);
 }
 
 .chip {
@@ -427,7 +544,7 @@ body th {
 }
 
 body td {
-  border-bottom: 1px solid rgba(196, 181, 253, 0.2);
+  border-bottom: 1px solid var(--garis-tabel);
 }
 
 body tbody tr:last-child td {
@@ -435,7 +552,7 @@ body tbody tr:last-child td {
 }
 
 body tbody tr:hover td {
-  background: rgba(124, 58, 237, 0.25);
+  background: var(--baris-hover);
 }
 
 .level {
@@ -451,16 +568,16 @@ body tbody tr:hover td {
   transform: skew(-10deg);
 }
 
-.level-basic        { border: 2px solid var(--lembut); color: var(--lembut); }
+.level-basic        { border: 2px solid var(--teks-lembut); color: var(--teks-lembut); }
 .level-intermediate { background: var(--tosca); color: var(--gelap); border: 2px solid var(--tosca); }
-.level-advance      { background: var(--kuning); color: var(--gelap); border: 2px solid var(--kuning); }
+.level-advance      { background: var(--kuning); color: var(--gelap); border: 2px solid var(--garis-kartu); }
 
 .bar {
   display: inline-block;
   vertical-align: middle;
   width: 120px;
   height: 10px;
-  background: rgba(255, 255, 255, 0.12);
+  background: var(--bar-bg);
   transform: skew(-20deg);
 }
 
@@ -484,14 +601,18 @@ body tbody tr:hover td {
 }
 
 .daftar-proyek .kartu:nth-child(2) { --aksen: var(--tosca); }
-.daftar-proyek .kartu:nth-child(3) { --aksen: var(--kuning); }
+.daftar-proyek .kartu:nth-child(3) { --aksen: var(--aksen3); }
 
 .daftar-proyek .kartu p {
-  color: var(--lembut);
+  color: var(--teks-lembut);
 }
 
 .kartu-hover:hover h3 {
   color: var(--aksen);
+}
+
+:root[data-tema="terang"] .kartu-hover:hover h3 {
+  color: var(--ungu);
 }
 
 .nomor {
@@ -505,8 +626,8 @@ body tbody tr:hover td {
 
 .tag {
   padding: 0 10px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  color: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--tag-garis);
+  color: var(--tag-teks);
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 1px;
@@ -531,7 +652,7 @@ body .tombol {
   letter-spacing: 1px;
   text-transform: uppercase;
   text-decoration: none;
-  border: 3px solid #fff;
+  border: 3px solid var(--garis-kartu);
   box-shadow: 5px 5px 0 var(--ungu);
   transform: skew(-8deg);
   cursor: pointer;
@@ -580,7 +701,7 @@ form p {
 body label {
   display: block;
   margin-bottom: 6px;
-  color: var(--kuning);
+  color: var(--label-form);
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 2px;
@@ -592,21 +713,51 @@ body input, body textarea {
   padding: 12px 14px;
   font-family: inherit;
   font-size: 16px;
-  color: #fff;
-  background: var(--gelap);
-  border: 2px solid rgba(196, 181, 253, 0.4);
+  color: var(--teks);
+  background: var(--input-bg);
+  border: 2px solid var(--input-garis);
   border-radius: 6px;
   resize: vertical;
 }
 
 body input::placeholder, body textarea::placeholder {
-  color: #8b7fb8;
+  color: var(--placeholder);
 }
 
 body input:focus, body textarea:focus {
   outline: none;
-  border-color: var(--kuning);
-  box-shadow: 0 0 0 3px rgba(255, 230, 0, 0.3);
+  border-color: var(--neon);
+  box-shadow: 0 0 0 3px rgba(255, 46, 147, 0.3);
+}
+
+/* Pesan konfirmasi form */
+.pesan-konfirmasi {
+  display: none;
+  margin-top: 24px;
+  margin-bottom: 0;
+  padding: 16px 20px;
+  background: var(--pesan-bg);
+  border: 3px solid var(--pesan-garis);
+  border-left-width: 10px;
+  border-radius: 10px;
+  color: var(--teks);
+  font-weight: 600;
+}
+
+.pesan-konfirmasi.tampil {
+  display: block;
+  animation: muncul 0.4s ease both;
+}
+
+.pesan-konfirmasi::before {
+  content: "\2714\00a0";
+  color: var(--pesan-garis);
+  font-weight: 800;
+}
+
+@keyframes muncul {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* ===== Footer ===== */
@@ -614,8 +765,8 @@ body footer {
   margin-top: 90px;
   padding: 36px 20px 28px;
   text-align: center;
-  background: #000;
-  color: var(--lembut);
+  background: var(--footer-bg);
+  color: #c4b5fd;
   border-top: 4px solid var(--kuning);
 }
 
@@ -656,6 +807,11 @@ body footer a:hover {
     flex-direction: column;
     gap: 10px;
     padding: 12px 16px;
+  }
+
+  .header-kanan {
+    flex-direction: column;
+    gap: 10px;
   }
 
   body nav ul {
@@ -730,141 +886,7 @@ body footer a:hover {
 
 /* Hormati pengguna yang mematikan animasi */
 @media (prefers-reduced-motion: reduce) {
-  .ticker-isi, .gogogo, .lanjut span, body #hero h2 {
+  .ticker-isi, .gogogo, .lanjut span, .pesan-konfirmasi.tampil, body #hero h2 {
     animation: none;
   }
-}
-/* ===== Tombol ganti tema & pesan konfirmasi ===== */
-.header-kanan {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-body .tombol-tema {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  background: transparent;
-  color: #fff;
-  font-family: inherit;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  border: 3px solid var(--kuning);
-  border-radius: 999px;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
-}
-
-body .tombol-tema:hover {
-  background: var(--neon);
-  border-color: var(--neon);
-  transform: scale(1.06) rotate(-2deg);
-}
-
-.pesan-konfirmasi {
-  display: none;
-  margin-top: 24px;
-  padding: 16px 20px;
-  background: rgba(0, 229, 212, 0.15);
-  border: 3px solid var(--tosca);
-  border-left-width: 10px;
-  border-radius: 10px;
-  color: #f5f3ff;
-  font-weight: 600;
-}
-
-.pesan-konfirmasi.tampil {
-  display: block;
-}
-
-/* ===== TEMA TERANG (the world) ===== */
-:root[data-tema="terang"] {
-  --t-bg: #fff3b0;
-  --t-bg2: #ffe066;
-  --t-titik: rgba(161, 98, 7, 0.22);
-  --t-kartu: #fffbe0;
-  --t-garis: #2b2200;
-  --t-teks: #2b2200;
-  --t-lembut: #6b5410;
-  --t-input: #fff8cc;
-  --t-nama2: #a16207;
-  --t-aksen3: #d97706;
-}
-:root[data-tema="terang"] body {
-  color: var(--t-teks);
-  background-color: var(--t-bg);
-  background-image:
-    radial-gradient(var(--t-titik) 1.5px, transparent 1.5px),
-    linear-gradient(180deg, var(--t-bg) 0%, var(--t-bg2) 100%);
-}
-
-:root[data-tema="terang"] header { background: var(--t-bg); }
-:root[data-tema="terang"] nav a,
-:root[data-tema="terang"] .tombol-tema,
-:root[data-tema="terang"] .bulat { color: var(--t-teks); }
-:root[data-tema="terang"] .tombol-tema:hover,
-:root[data-tema="terang"] .bulat:hover { color: #fff; }
-
-:root[data-tema="terang"] .kartu { background: var(--t-kartu); border-color: var(--t-garis); }
-:root[data-tema="terang"] .daftar-proyek .kartu { border-top-color: var(--aksen); }
-:root[data-tema="terang"] .daftar-proyek .kartu:nth-child(3) { --aksen: var(--t-aksen3); }
-:root[data-tema="terang"] .kartu-bubble::before { border-top-color: var(--t-garis); }
-:root[data-tema="terang"] .kartu-bubble::after { border-top-color: var(--t-kartu); }
-:root[data-tema="terang"] .kartu-hover:hover h3 { color: #7c3aed; }
-:root[data-tema="terang"] .tombol { border-color: var(--t-garis); }
-
-:root[data-tema="terang"] .text-violet-100,
-:root[data-tema="terang"] .text-violet-200,
-:root[data-tema="terang"] .tagline { color: var(--t-lembut); }
-:root[data-tema="terang"] .daftar-proyek .kartu p { color: var(--t-lembut); }
-:root[data-tema="terang"] .text-kuning { color: #ff2e93; }
-:root[data-tema="terang"] .label { color: #0f766e; }
-:root[data-tema="terang"] #hero .nama-1 { color: var(--t-teks); }
-:root[data-tema="terang"] #hero .nama-2 { color: var(--t-nama2); }
-:root[data-tema="terang"] .gogogo { color: rgba(124, 58, 237, 0.14); }
-
-:root[data-tema="terang"] td { border-bottom-color: rgba(42, 23, 96, 0.14); }
-:root[data-tema="terang"] tbody tr:hover td { background: rgba(124, 58, 237, 0.12); }
-:root[data-tema="terang"] .level-basic { color: var(--t-lembut); border-color: var(--t-lembut); }
-:root[data-tema="terang"] .bar { background: rgba(42, 23, 96, 0.14); }
-:root[data-tema="terang"] .tag { color: var(--t-lembut); border-color: var(--t-lembut); }
-
-:root[data-tema="terang"] label { color: #6d28d9; }
-:root[data-tema="terang"] input,
-:root[data-tema="terang"] textarea {
-  color: var(--t-teks);
-  background: var(--t-input);
-  border-color: var(--t-lembut);
-}
-:root[data-tema="terang"] input::placeholder,
-:root[data-tema="terang"] textarea::placeholder { color: #8f82b8; }
-
-:root[data-tema="terang"] .pesan-konfirmasi { color: var(--t-teks); border-color: #0f766e; }
-:root[data-tema="terang"] footer { background: var(--t-garis); }
-/* Layar HP: tombol tema di bawah menu */
-@media (max-width: 768px) {
-  .header-kanan {
-    flex-direction: column;
-    gap: 10px;
-  }
-  /* Nama hero di mode terang */
-:root[data-tema="terang"] #hero .nama-1 {
-  color: #4c1d95;
-  -webkit-text-stroke: 0;
-  text-shadow: 3px 3px 0 #fff, 6px 6px 0 #00e5d4;
-}
-:root[data-tema="terang"] #hero .nama-2 {
-  color: #1b0f3b;
-  -webkit-text-stroke: 0;
-  text-shadow: 4px 4px 0 #ff2e93, 8px 8px 0 #fff;
-}
-/* Tagline lebih jelas di mode terang */
-:root[data-tema="terang"] .tagline {
-  color: #2b2200;
-  font-weight: 600;
-}
 }
