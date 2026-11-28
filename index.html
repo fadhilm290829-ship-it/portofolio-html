@@ -1,18 +1,37 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <script src="https://cdn.tailwindcss.com"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portofolio Fadhil Muhammad</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            neon: "#ff2e93",
+            ungu: "#7c3aed",
+            kuning: "#ffe600",
+            tosca: "#00e5d4"
+          },
+          fontFamily: { judul: ["Bungee", "sans-serif"] }
+        }
+      }
+    };
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Bungee&family=Dela+Gothic+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header>
-    <h1 class="text-2xl font-semibold">Fadhil Muhammad</h1>
-    <nav>
+    <h1 class="logo"><a href="#hero">Fadhil M.</a></h1>
+    <nav aria-label="Navigasi utama">
       <ul>
         <li><a href="#hero">Beranda</a></li>
         <li><a href="#about">Tentang</a></li>
@@ -23,27 +42,62 @@
     </nav>
   </header>
 
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-isi">
+      <span>Web Developer</span><span>HITLAB 26.2</span><span>Sistem Informasi</span><span>UIN Jakarta</span>
+      <span>Web Developer</span><span>HITLAB 26.2</span><span>Sistem Informasi</span><span>UIN Jakarta</span>
+    </div>
+  </div>
+
   <main>
 
+    <!-- HERO -->
     <section id="hero">
-      <img class="mx-auto rounded-full shadow-lg" src="image/foto-profil.jpeg"
-           alt="Foto Profil Fadhil Muhammad" width="200" height="200">
-      <h2>Fadhil Muhammad</h2>
-      <p class="text-lg text-slate-600">
-        Mahasiswa Sistem Informasi yang antusias belajar teknologi.
-      </p>
+      <span class="gogogo g1" aria-hidden="true">ゴゴゴゴゴ</span>
+      <span class="gogogo g2" aria-hidden="true">ドドドド</span>
+
+      <div class="hero-teks">
+        <p class="label">「 Portofolio 」</p>
+        <h2><span class="nama-1">Fadhil</span><span class="nama-2">Muhammad</span></h2>
+        <p class="peran">Future Web Developer</p>
+        <p class="tagline">Mahasiswa Sistem Informasi.</p>
+
+        <div class="flex flex-wrap gap-4 mt-8 hero-aksi">
+          <a class="tombol" href="#proyek">Lihat Proyek</a>
+          <a class="tombol tombol-kuning" href="#kontak">Hubungi Saya</a>
+        </div>
+
+        <div class="flex gap-3 mt-8 sosial">
+          <a class="bulat" href="https://github.com/fadhilm290829-ship-it" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
+          <a class="bulat" href="https://www.linkedin.com/in/fadhil-muhammad-5432a0429" target="_blank" rel="noopener" aria-label="LinkedIn">IN</a>
+          <a class="bulat" href="https://instagram.com/fadhilmhmmd._" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+        </div>
+      </div>
+
+      <div class="foto">
+        <img src="image/foto-profil.jpeg" alt="Foto Profil Fadhil Muhammad" width="380" height="400">
+      </div>
     </section>
 
+    <!-- ABOUT -->
     <section id="about">
       <h2>Tentang Saya</h2>
-      <p class="text-slate-600">
-        Halo, saya Fadhil Muhammad, mahasiswa Sistem Informasi di UIN Syarif
-        Hidayatullah Jakarta dan lulusan SMA Cenderawasih 1 Jakarta. Saya
-        tertarik pada pengembangan web dan ingin membangun fondasi yang kuat
-        agar bisa membuat solusi digital yang bermanfaat.
-      </p>
+      <div class="kartu kartu-bubble">
+        <p class="text-violet-100">
+          Halo, saya Fadhil Muhammad, mahasiswa Sistem Informasi di UIN Syarif
+          Hidayatullah Jakarta dan lulusan SMA Cenderawasih 1 Jakarta. Saya
+          tertarik pada pengembangan web dan ingin membangun fondasi yang kuat
+          agar bisa membuat solusi digital yang bermanfaat.
+        </p>
+        <div class="flex flex-wrap gap-3 mt-6">
+          <span class="chip">UIN Jakarta</span>
+          <span class="chip chip-tosca">Sistem Informasi</span>
+          <span class="chip chip-kuning">HITLAB 26.2</span>
+        </div>
+      </div>
     </section>
 
+    <!-- SKILL -->
     <section id="skill">
       <h2>Skill</h2>
       <div class="kartu kartu-skill">
@@ -56,63 +110,108 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td>1</td><td>HTML</td><td>Basic</td></tr>
-            <tr><td>2</td><td>CSS</td><td>Basic</td></tr>
-            <tr><td>3</td><td>Microsoft Word</td><td>Intermediate</td></tr>
-            <tr><td>4</td><td>Bahasa Inggris</td><td>Advance</td></tr>
+            <tr>
+              <td>1</td><td>HTML</td>
+              <td><span class="level level-basic">Basic</span><span class="bar"><i class="w-1/3"></i></span></td>
+            </tr>
+            <tr>
+              <td>2</td><td>CSS</td>
+              <td><span class="level level-basic">Basic</span><span class="bar"><i class="w-1/3"></i></span></td>
+            </tr>
+            <tr>
+              <td>3</td><td>Git &amp; GitHub</td>
+              <td><span class="level level-basic">Basic</span><span class="bar"><i class="w-1/3"></i></span></td>
+            </tr>
+            <tr>
+              <td>4</td><td>Microsoft Word</td>
+              <td><span class="level level-intermediate">Intermediate</span><span class="bar"><i class="w-2/3"></i></span></td>
+            </tr>
+            <tr>
+              <td>5</td><td>Bahasa Inggris</td>
+              <td><span class="level level-intermediate">Intermediate</span><span class="bar"><i class="w-2/3"></i></span></td>
+            </tr>
           </tbody>
         </table>
       </div>
     </section>
 
+    <!-- PROYEK -->
     <section id="proyek">
       <h2>Proyek</h2>
       <div class="daftar-proyek">
 
-        <article class="kartu border-t-4 border-blue-600">
+        <article class="kartu kartu-hover">
+          <span class="nomor">01</span>
           <h3>Portofolio Pribadi</h3>
-          <p class="text-slate-600">Website portofolio dengan HTML dan CSS sebagai tugas praktikum.</p>
-          <a class="tombol hover:opacity-90" href="#">Lihat Proyek</a>
+          <p>Website portofolio dengan HTML dan CSS sebagai tugas praktikum.</p>
+          <div class="flex flex-wrap gap-2 mt-3 mb-4">
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Tailwind</span>
+          </div>
+          <a class="tombol" href="https://github.com/fadhilm290829-ship-it/portofolio-html.git" target="_blank" rel="noopener">Lihat Proyek</a>
         </article>
 
-        <article class="kartu border-t-4 border-blue-600">
+        <article class="kartu kartu-hover">
+          <span class="nomor">02</span>
           <h3>Web Daftar Tugas</h3>
-          <p class="text-slate-600">Website untuk menampilkan daftar tugas harian.</p>
-          <a class="tombol hover:opacity-90" href="#">Lihat Proyek</a>
+          <p>Website untuk menampilkan daftar tugas harian.</p>
+          <div class="flex flex-wrap gap-2 mt-3 mb-4">
+            <span class="tag">HTML</span><span class="tag">CSS</span>
+          </div>
+          <a class="tombol" href="https://github.com/USERNAME-KAMU/portofolio-hitlab" target="_blank" rel="noopener">Lihat Proyek</a>
         </article>
 
-        <article class="kartu border-t-4 border-blue-600">
+        <article class="kartu kartu-hover">
+          <span class="nomor">03</span>
           <h3>Katalog Buku Perpustakaan</h3>
-          <p class="text-slate-600">Halaman untuk menampilkan katalog buku di perpustakaan.</p>
-          <a class="tombol hover:opacity-90" href="#">Lihat Proyek</a>
+          <p>Halaman untuk menampilkan katalog buku di perpustakaan.</p>
+          <div class="flex flex-wrap gap-2 mt-3 mb-4">
+            <span class="tag">HTML</span><span class="tag">Tabel</span>
+          </div>
+          <a class="tombol" href="https://github.com/USERNAME-KAMU/portofolio-hitlab" target="_blank" rel="noopener">Lihat Proyek</a>
         </article>
 
       </div>
     </section>
 
+    <!-- KONTAK -->
     <section id="kontak">
       <h2>Hubungi Saya</h2>
-      <form action="#" method="post" class="kartu">
-        <p>
-          <label for="nama">Nama</label>
-          <input type="text" id="nama" name="nama" required>
-        </p>
-        <p>
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
-        </p>
-        <p>
-          <label for="pesan">Pesan</label>
-          <textarea id="pesan" name="pesan" rows="5" required></textarea>
-        </p>
-        <button type="submit" class="tombol hover:opacity-90">Submit</button>
-      </form>
+      <div class="kontak-grid">
+
+        <div class="kontak-info">
+          <span class="gogogo g3" aria-hidden="true">ドドドド</span>
+          <p class="font-judul text-5xl leading-tight uppercase">Ayo <span class="text-kuning">ngobrol!</span></p>
+          <p class="mt-4 text-violet-200">Punya ide, pertanyaan, atau ajakan kolaborasi? Tinggalkan pesanmu di sini.</p>
+        </div>
+
+        <form action="#" method="post" class="kartu">
+          <p>
+            <label for="nama">Nama</label>
+            <input type="text" id="nama" name="nama" placeholder="Nama lengkap" required>
+          </p>
+          <p>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="nama@email.com" required>
+          </p>
+          <p>
+            <label for="pesan">Pesan</label>
+            <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesanmu di sini" required></textarea>
+          </p>
+          <button type="submit" class="tombol">Submit</button>
+        </form>
+
+      </div>
     </section>
 
   </main>
 
   <footer>
-    <p class="text-sm">&copy; 2026 Fadhil Muhammad. Seluruh hak cipta dilindungi.</p>
+    <p class="lanjut">To be continued <span>&#10230;</span></p>
+    <p class="text-sm font-semibold mt-3">
+      &copy; 2026 Fadhil Muhammad &middot;
+      <a href="https://github.com/USERNAME-KAMU/portofolio-hitlab" target="_blank" rel="noopener">GitHub</a> &middot;
+      <a href="#hero">&uarr; Ke atas</a>
+    </p>
   </footer>
 
 </body>
